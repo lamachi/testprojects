@@ -1,0 +1,136 @@
+<! doc HTML>
+<html>
+<head>
+<title>More complext CSS Grid layout</title>
+<style>
+
+body {
+	font-family: Arial;
+		
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 200px 1fr 200px;
+  grid-gap: 20px;
+  grid-template-areas: 
+    "header header header"
+    "posts articles favorites "
+}
+
+.footer {
+  background-color: #17242D;
+  font-family: Arial;
+  color: white;	
+  font-size: .6em;
+  padding: 5px;
+  height: 15px;
+  grid-column-start: posts-start;
+  grid-column-end: favorites-end;
+}
+
+.header {
+  background-color: #17242D;
+  font-family: Arial;
+  color: white;	
+  padding: 5px;	
+  grid-area: header;
+}
+
+.articles {
+  grid-area: articles;
+}
+
+.article:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.posts {
+  grid-area: posts;
+}
+
+.favorites {
+  grid-area: favorites;
+}
+
+.post {
+  background-color: #87B3D6;
+  margin-bottom: 20px;
+  padding: 5px;	
+}
+
+.favorite {
+  background-color: #7CCBB0;
+  margin-bottom: 20px;
+  padding: 5px;
+}
+</style>
+</head>
+
+<body>
+<main class="grid">
+  <header class="item header">
+    <h1>My Website</h1>
+  </header>
+  <div class="articles">
+    <article class="item article">
+      <h2>Article 1</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam modi nihil, alias dolores autem officia debitis unde nemo vel temporibus, tempora consequatur, culpa illum ad repudiandae perferendis? Porro, voluptatibus, cupiditate!</p>
+    </article>
+
+    <article class="item article">
+      <h2>Article 2</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam modi nihil, alias dolores autem officia debitis unde nemo vel temporibus, tempora consequatur, culpa illum ad repudiandae perferendis? Porro, voluptatibus, cupiditate!</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam modi nihil, alias dolores autem officia debitis unde nemo vel temporibus, tempora consequatur, culpa illum ad repudiandae perferendis? Porro, voluptatibus, cupiditate!</p>
+    </article>
+
+    <article class="item article">
+      <h2>Article 3</h2>
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam modi nihil, alias dolores autem officia debitis unde nemo vel temporibus, tempora consequatur, culpa illum ad repudiandae perferendis? Porro, voluptatibus, cupiditate!</p>
+    </article>
+  </div>
+  
+  <aside class="posts">
+    <div class="item post">
+      <h2>Related Posts</h2>
+
+      <ul>
+        <li>Element 1</li>
+        <li>Element 2</li>
+        <li>Element 3</li>
+        <li>Element 4</li>
+        <li>Element 5</li>
+        <li>Element 6</li>
+      </ul>
+    </div>
+    
+    <div class="item post">
+      <h2>More Posts</h2>
+      <ul>
+        <li>Element 1</li>
+        <li>Element 2</li>
+        <li>Element 3</li>
+        <li>Element 4</li>
+        <li>Element 5</li>
+        <li>Element 6</li>
+      </ul>
+    </div>
+  </aside>  
+  
+  <aside class="favorites">
+    <div class="item favorite">
+      <h2>Favorite 1</h2>
+    </div>
+
+    <div class="item favorite">
+      <h2>Favorite 2</h2>
+    </div>
+  </aside>
+  
+  <footer class="item footer">
+    &copy;HEFSP     
+  </footer>
+</div>
+</body>
+</html>
